@@ -40,7 +40,7 @@ export default function GrudgeList(){
 
     return (
         <div style={{margin: '20px'}}>
-            <h3 style={{margin: '20px 0px'}}>{title}</h3>
+            <h3 data-test="grudge-title" style={{margin: '20px 0px'}}>{title}</h3>
             <div>
             <TextField 
             data-test="grudge-input"
@@ -67,7 +67,7 @@ export default function GrudgeList(){
                                 <span>
                                 {g.text}
                                 </span>
-                                <Button onClick={() => deleteGrudge(g)}>
+                                <Button onClick={() => deleteGrudge(g)} data-test="grudge-delete">
                                     X
                                 </Button> 
                             </li>
@@ -76,7 +76,7 @@ export default function GrudgeList(){
                 }
             </ul>
             {
-                grudges.length > 0 && <Button onClick={clearGrudges}>Clear</Button>
+                grudges.length > 0 && <Button data-test="clear-button" onClick={clearGrudges}>Clear</Button>
             }
         </div>
     )
